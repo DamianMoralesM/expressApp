@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+    - "8.11"
+
+before_install:
+    - sh -e /etc/init.d/xvfb start
+before_script:
+    - npm install
+    - npm install -g express
+    - npm test 
+
+deploy:
+  provider: azure_web_apps
+  username: "damianMorales"
+  password: "Agilesapp2018"
+  site: "testAppExpress"
